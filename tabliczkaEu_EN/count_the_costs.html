@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+  <head>
+
+       <meta charset="utf-8">
+       <title>Price your order for nameplates or plates</title>
+
+       <meta name="description" content="Nobody likes to wait, that's why our answers are rapid. Check how quickly we make individual quotes!">
+       <meta name="keywords" content="The price for your nameplates">
+       <meta name="author" content="OFICYNA s.c.">
+       <meta http-equiv="X-Ua-Compatible" content="IE=edge"> <!-- Older versions of browser are compatible to -->   
+       
+       <link rel="icon" href="Images/siteIcon.png">    
+       <link href='https://fonts.googleapis.com/css?family=Gruppo&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+       <link rel="stylesheet" href="CSS/bootstrap.min.css" type='text/css'>
+       <link rel="stylesheet" href="CSS/styler.css" type='text/css'>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+       <link href="https://fonts.googleapis.com/css?family=Gruppo" rel="stylesheet"> 
+       <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+       <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>       
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>       
+       <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>   
+
+
+       <script>
+        (function(){
+          emailjs.init("user_yJSjgmvxfeKQaKx2VCflp");
+          console.log("Connected");
+        })();
+       </script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136742509-2"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-136742509-2');
+      </script>
+     
+  </head>
+
+
+  <body>
+    <div class="parallax-container" style="height: 130px;">
+      <div class="parallax"><img src="Images/backgroundBlack1.jpg" alt="blackParallaxBackground"></div> 
+    </div>
+    
+
+    <div class="costContainer" style="width: 100%; height: 75%; padding-bottom: 50px;">     
+
+
+      <div class="row">
+        <div class="col-lg-12"> 
+
+          <div id="header">
+            <div id="logoPosition">
+             <a href="index.html"> <img src="Images/logo.png" alt="logoOficyna" style="width: 210px; margin-top: -135px;"> </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: -40px; margin-left: 8%;">
+        <div class="col-lg-6"> 
+
+          <div class="roundedFrame">
+
+            <div class="smallRoundedFrameLeft">              
+              <img src="Images/materialIcons/brassIcon.png" alt="brass" style="width: 20%; height: auto; margin-top: 5px; padding: 5px;">
+              <img src="Images/materialIcons/steelIcon.png" alt="steel" style="width: 20%; height: auto; margin-top: 5px; padding: 5px;">
+              <img src="Images/materialIcons/laminatIcon.png" alt="laminate" style="width: 20%; height: auto; margin-top: 5px; padding: 5px;">
+              <img src="Images/materialIcons/aluminiumIcon.png" alt="aluminium" style="width: 20%; height: auto; margin-top: 5px; padding: 5px;">   
+            </div>
+
+            <div class="smallRoundedFrameRight">
+
+              <h5>Material</h5>
+
+              <select id="material" class="browser-default" onchange="fillingOptions()" >
+                <option>select material</option>
+                <option>Brass</option>
+                <option>Stainless steel</option>
+                <option>Laminate</option>
+                <option>Aluminium</option>
+              </select>
+
+            </div>       
+          </div>
+
+          <div class="roundedFrame">
+
+            <div class="smallRoundedFrameLeft">
+              <img src="Images/Sizes/thickness.svg" alt="thickness" style="width: 85%; height: 40%;">  
+            </div>                
+            
+            <div class="smallRoundedFrameRight" style="margin-top: 3%;">
+              <h5>Thickness(mm)</h5>
+              <select id="thickness" class="browser-default"></select>
+            </div>
+
+          </div>
+
+          <div class="roundedFrame">
+
+            <div class="smallRoundedFrameLeft">
+              <img src="Images/Sizes/height.svg" alt="height" style="width: 85%; height: auto;"> 
+            </div>   
+
+            <div class="smallRoundedFrameRight" style="padding:3%;">  
+              <h5>Height(cm)</h5>               
+              <input type="number" id="height" style="height: 20px;"> 
+            </div>   
+           
+          </div>   
+
+          <div class="roundedFrame">
+
+            <div class="smallRoundedFrameLeft">
+              <img src="Images/Sizes/width.svg" alt="width" style="width: 85%; height: auto;">
+            </div>
+
+            <div class="smallRoundedFrameRight" style="padding:3%;"> 
+              <h5>Width(cm)</h5>
+              <input type="number" id="width" style="height: 20px;">          
+            </div>    
+
+        </div>
+      </div>
+
+        <div class="col-lg-6"> 
+
+          <div class="roundedFrame">
+
+            <div class="smallRoundedFrameLeft">
+              <img src="Images/Sizes/quantity.svg" alt="quantity" style="width: 85%; height: auto;"> 
+            </div>  
+
+            <div class="smallRoundedFrameRight" style="padding:3%;">   
+              <h5>Quantity</h5>      
+              <input type="number" id="quantity" value="1" style="height: 20px;">          
+            </div>
+
+          </div>
+
+          <div class="roundedFrame">
+
+            <div class="smallRoundedFrameLeft">
+              <img src="Images/Sizes/uvSize.svg" alt="UVsurface" style="width: 85%; height: auto;">   
+            </div> 
+
+            <div class="smallRoundedFrameRight" style="padding:3%;">   
+              <h5>UV print surface (cm2)</h5>       
+              <input type="number" id="uvSize" style="height: 20px;">          
+            </div>
+
+          </div>
+
+          <div class="roundedFrame">
+
+            <div class="smallRoundedFrameLeft">
+              <img src="Images/Sizes/engraveSize.svg" alt="engravingSurface" style="width: 85%; height: auto;">
+            </div>
+
+            <div class="smallRoundedFrameRight" style="padding:3%;">  
+              <h5>Engraving surface (cm2)</h5>
+              <input type="number" id="engraveSize" style="height: 20px;">          
+            </div> 
+
+          </div>
+
+          <img src="Buttons/costs.svg" alt="ikonaWycen" style="margin-top: 10%; margin-right: 10%; width: 40%">
+          <a onclick="costsCounter()" href="#"><img src="Buttons/calculateButton1.svg" alt="costButton" style="margin-right: 10%; margin-top: 10%; width: 20%; min-width: 110px;"></a> <br>  
+      
+        </div>      
+      </div>
+    </div>
+
+    <div class="parallax-container">
+      <div class="parallax"><img src="Images/backgroundBlack1.jpg" alt="imageToDisplay" ></div>
+
+      <div id="contact"  class="section scrollspy">        
+          <div class="col s6 l3"><a href="mailto:wycena@grupaoficyna.pl" ><img src="Buttons/footer/Mail.svg" alt="mail" style="width:20%; min-width: 170px;"></a></div>       
+      </div>
+    </div>
+
+    <div id="footer">
+      <h6>Copyright © Oficyna s.c.</h6>
+    </div>
+    
+      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+      <script src="JavaScript/skrypt.js"></script>       
+
+  </body>
+</html>
